@@ -208,7 +208,7 @@ def updateSources():
         with open("/etc/apt/sources.list", "w") as f:
             f.write(official_apt_source)
         saveOutputs.endDevider()
-        saveOutputs.endDevider("Updating APT")
+        saveOutputs.createDevider("Updating APT")
         # update apt
         subprocess.call(["apt", "update"])
         # upgrade apt
