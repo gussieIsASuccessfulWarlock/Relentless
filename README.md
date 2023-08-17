@@ -1,9 +1,13 @@
 # Relentless
 
-##Python Requierments
-```bash pip install -r requirements.txt```
-##Run Python Script
-```bash python3 main.py```
+## Python Requierments
+```bash 
+pip install -r requirements.txt
+```
+## Run Python Script
+```bash
+python3 main.py
+```
 
 ### What the script does
 - Manages users and groups (In usersAndGroups.py)
