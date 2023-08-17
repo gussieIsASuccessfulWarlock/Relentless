@@ -184,19 +184,19 @@ def updateSources():
     os_release = subprocess.check_output(["cat", "/etc/os-release"])
     os_release = os_release.decode("utf-8")
     os_release = os_release.split("\n")
-    # get os name
-    os_name = os_release[0]
-    os_name = os_name.split("=")
-    os_name = os_name[1]
-    # get os version
-    os_version = os_release[1]
-    os_version = os_version.split("=")
-    os_version = os_version[1]
+    for line in os_release:
+        if line.startswith("VERSION_ID="):
+            os_version = line.split("=")[1].replace('"', '')
+        elif line.startswith("NAME="):
+            os_name = line.split("=")[1].replace('"', '')
     # get official apt sources for os
     for aptSource in aptSources:
         if aptSource["name"] == os_name + " " + os_version:
             official_apt_source = aptSource["source"]
-
+    try:
+        official_apt_source
+    except NameError:
+        official_apt_source = None
     if official_apt_source == None:
         saveOutputs.error("Official apt source not found for " + os_name + " " + os_version + ". Your on your own.")
         sys.exit()
