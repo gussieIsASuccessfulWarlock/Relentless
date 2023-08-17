@@ -88,10 +88,12 @@ def main():
             if checkShell(user):
                 saveOutputs.error(f'{user} is not authorized to be on the system')
                 # remove user
-                subprocess.run(['userdel', user])
-                saveOutputs.success(f'{user} has been removed from the system')
+                if subprocess.run(['userdel', user]).returncode == 0:
+                    saveOutputs.success(f'{user} has been removed from the system')
+                else:
+                    saveOutputs.error(f'{user} could not be removed from the system')
             else:
-                saveOutputs.createDevider("Unknow User")
+                saveOutputs.createDevider("Unknown User")
                 saveOutputs.warning(f'{user} is not authorized to be on the system and is not in a valid shell')
                 saveOutputs.endDevider()
     saveOutputs.endDevider()
