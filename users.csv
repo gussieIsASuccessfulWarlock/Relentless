@@ -1,0 +1,5 @@
+username,groups
+joe,managers:operators
+susan,sudo:it
+frank,managers:root
+kali,sudo:root
