@@ -11,10 +11,6 @@ import subprocess
 import saveOutputs
 
 # Golbal variables
-csv_path = 'users.csv'
-input_file = input("Enter the path to the .csv file (users.csv): ")
-if input_file != '':
-    csv_path = input_file
 authorized_users =[]
 
 # Support Functions
@@ -26,7 +22,11 @@ def checkShell(user):
         return False
 
 def main():
-    global authorized_users, csv_path
+    csv_path = 'users.csv'
+    input_file = input("Enter the path to the .csv file (users.csv): ")
+    if input_file != '':
+        csv_path = input_file
+    global authorized_users
     saveOutputs.saveBackupOfFile('/etc/shadow')
     saveOutputs.saveBackupOfFile('/etc/passwd')
     saveOutputs.saveBackupOfFile('/etc/group')
