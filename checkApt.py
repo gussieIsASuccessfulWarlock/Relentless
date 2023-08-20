@@ -17,9 +17,9 @@ def main():
     
     # compare the two
     if reg != apt:
-        saveOutputs.warning("APT sources are not the same:")
         # loop through the lines of the file
         for line in apt.splitlines():
             # if the line is not in the file
             if line not in reg:
+                saveOutputs.warning("APT Package Discrepancy:")
                 saveOutputs.warning("     " + line)
