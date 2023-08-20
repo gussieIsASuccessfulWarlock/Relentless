@@ -11,6 +11,8 @@ def main():
     reg = f.read()
     # close the file
     f.close()
+
+    issues = []
     
     # run the command
     apt = os.popen("apt list --installed").read()
@@ -23,3 +25,6 @@ def main():
             if line not in reg and line != "Listing...":
                 saveOutputs.warning("APT Package Discrepancy:")
                 saveOutputs.warning("     " + line)
+                issues.append(line)
+    if issues == []:
+        saveOutputs.success("No APT Package Discrepancies Found")
