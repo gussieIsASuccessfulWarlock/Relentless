@@ -32,6 +32,9 @@ When fixing APT you are often given an error before installing a package, eventh
 ## Check Installed Files
 When checking installed files you are often expected to know what should be installed. This script will cross check the normal files that are installed. If there are discrepancies it will tell you. This script is very easu to use. All you have to do is run the script and it will do the rest.
 
+## Checklists
+- [Checklist 1](https://github.com/gussieIsASucessfullWarlock/Relentless/blob/main/Checklist%201.md)
+
 ### Supported OS
 - Ubuntu
 - Debian
