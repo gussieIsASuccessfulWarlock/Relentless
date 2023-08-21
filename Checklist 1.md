@@ -134,7 +134,7 @@
     # Odd file perms
     ls -l /path/to/file
     ```
-    
+
 - [ ]  Malicious PAM backdoor removed
     - Command: `sudo vim /etc/pam.d/common-auth` (Edit the file and remove suspicious entry)
 - [ ]  Account lockout policy configured
@@ -164,10 +164,10 @@
 - [ ]  Unauthorized superuser wheatley removed from GRUB
     - Command: `sudo vim /etc/grub.d/40_custom` (Edit the file and remove wheatley password)
 - [ ]  /etc/shadow is not world-readable
-    - Command: `ls -l /etc/shadow`
+    - Command: `chmod 600 /etc/shadow`
 - [ ]  /etc/passwd is not world-writable
-    - Command: `ls -l /etc/passwd`
+    - Command: `chmod 600 /etc/passwd`
 - [ ]  cp is not a SUID binary
-    - Command: `ls -l /usr/bin/cp`
+    - Command: `chmod chmod 4755 /bin/cp /usr/bin/cp`
 - [ ]  Removed insecure /etc/hosts entries
     - Command: `sudo vim /etc/hosts` (Edit the file and remove insecure entries)
