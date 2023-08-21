@@ -5,7 +5,7 @@
 - [ ]  Automatic screen lock enabled
     - Command: `gsettings set org.gnome.desktop.screensaver lock-enabled true`
 - [ ]  The system is configured to automatically check for updates
-    - Command: `sudo apt-get update`
+    - Command: Use GUI for auto updates
 - [ ]  Disabled automatic login
     - Command: `sudo sed -i 's/AutomaticLoginEnable=True/AutomaticLoginEnable=False/' /etc/gdm3/custom.conf`
 - [ ]  The root account is locked
@@ -15,9 +15,9 @@
 - [ ]  Uncomplicated Firewall (UFW) protection is enabled
     - Command: `sudo ufw enable`
 - [ ]  NFS has been disabled or removed
-    - Command: `sudo systemctl stop nfs-kernel-server nfs-server nfsdcld nfs-mountd nfs-idmapd nfs-blkmap`
+    - Command: `sudo systemctl stop nfs-kernel-server nfs-server nfsdcld nfs-mountd nfs-idmapd nfs-blkmap && sudo systemctl disable nfs-kernel-server nfs-server nfsdcld nfs-mountd nfs-idmapd nfs-blkmap`
 - [ ]  Nginx has been disabled or removed
-    - Command: `sudo systemctl stop nginx`
+    - Command: `sudo systemctl stop nginx && sudo systemctl disable nginx`
 - [ ]  Apache service is enabled
     - Command: `sudo systemctl enable apache2`
 - [ ]  The UFW application profile for Apache has been configured as "Apache Secure"
@@ -29,7 +29,7 @@
         ```
         
 - [ ]  SSH Server is started
-    - Command: `sudo systemctl start ssh`
+    - Command: `sudo systemctl start ssh && sudo systemctl enable ssh`
 - [ ]  Removed insecure sudoers rule
     - Command: `sudo vim /etc/sudoers` (remove any `ALL=(ALL:ALL) NOPASSWD: ALL` lines)
 - [ ]  IPv4 TIME-WAIT ASSASSINATION protection enabled
@@ -134,7 +134,6 @@
     # Odd file perms
     ls -l /path/to/file
     ```
-
 - [ ]  Malicious PAM backdoor removed
     - Command: `sudo vim /etc/pam.d/common-auth` (Edit the file and remove suspicious entry)
 - [ ]  Account lockout policy configured
