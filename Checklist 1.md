@@ -1,5 +1,21 @@
 # Checklist 1
 
+### Forensics Helps
+- `iconv -t UTF-16 <file.txt>` (Returns the file in UTF-16 format)
+- `xxd <file.txt>` (Returns the hex of the file)
+- `xxd UTF-16 <file.txt>` (Returns the hex of the file in UTF-16 format)
+- `sha256sum <file.txt>` (Returns the sha256 hash of the file)
+- `file <file.txt>` (Returns the file type)
+- `strings <file.txt>` (Returns the strings in the file)
+
+### Grep Help
+- `grep <string> <file.txt>` (Returns the lines with the string in the file)
+- `grep -v <string> <file.txt>` (Returns the lines without the string in the file)
+- `grep -i <string> <file.txt>` (Returns the lines with the string in the file, ignoring case)
+- `grep -r <string> <file.txt>` (Returns the lines with the string in the file, recursively)
+- `grep -w <string> <file.txt>` (Returns the lines with the string in the file, only whole words)
+- `grep -A <number> <string> <file.txt>` (Returns the lines with the string in the file, with <number> lines after)
+
 - [ ]  Screen timeout policy set to 5 minutes or less
     - Command: `gsettings set org.gnome.desktop.session idle-delay 300`
 - [ ]  Automatic screen lock enabled
