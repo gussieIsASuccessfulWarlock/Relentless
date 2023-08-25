@@ -35,6 +35,9 @@ When checking installed files you are often expected to know what should be inst
 ## Checklists
 - [Checklist 1](https://github.com/gussieIsASucessfullWarlock/Relentless/blob/main/Checklist%201.md)
 
+## Scripts fpr Forensics Questions
+- [Hashes](https://github.com/gussieIsASucessfullWarlock/Hash-Finder)
+
 ### Supported OS
 - Ubuntu
 - Debian
